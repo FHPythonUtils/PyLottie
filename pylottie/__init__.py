@@ -11,7 +11,15 @@ from pyppeteer import launch
 from PIL import Image
 THISDIR = str(Path(__file__).resolve().parent)
 
+def convertLottie2ALL(fileName: str, newFileName: str, quality: int=0):
+	"""Convert to gif and webp
 
+	Args:
+		fileName (str): file path of the lottie file
+		newFileName (str): name of the file to write (omit file ext)
+		quality (int, optional): Quality of the returned sequence. Defaults to 0.
+	"""
+	convertMultLottie2ALL([fileName], [newFileName], quality)
 
 def convertLottie2GIF(fileName: str, newFileName: str, quality: int=0):
 	"""Convert to webp
@@ -22,7 +30,6 @@ def convertLottie2GIF(fileName: str, newFileName: str, quality: int=0):
 		quality (int, optional): Quality of the returned sequence. Defaults to 0.
 	"""
 	convertMultLottie2GIF([fileName], [newFileName], quality)
-	rmtree("temp", ignore_errors=True)
 
 def convertLottie2Webp(fileName: str, newFileName: str, quality: int=0):
 	"""Convert to webp
@@ -33,6 +40,23 @@ def convertLottie2Webp(fileName: str, newFileName: str, quality: int=0):
 		quality (int, optional): Quality of the returned sequence. Defaults to 0.
 	"""
 	convertMultLottie2Webp([fileName], [newFileName], quality)
+
+def convertMultLottie2ALL(fileNames: list[str], newFileNames: list[str], quality: int=0):
+	"""Convert to gif and webp
+
+	Args:
+		fileNames (list[str]): list of file path to the lottie files
+		newFileNames (list[str]): name of the files to write (omit file ext)
+		quality (int, optional): Quality of the returned sequence. Defaults to 0.
+	"""
+	imageDataList = convertLotties2PIL(fileNames, quality)
+	for index, imageData in enumerate(imageDataList):
+		images = imageData[0]
+		duration = imageData[1]
+		images[0].save(newFileNames[index]+".gif", save_all=True, append_images=images[1:],
+		duration=duration*1000/len(images), loop=0, transparency=0, disposal=2)
+		images[0].save(newFileNames[index]+".webp", save_all=True, append_images=images[1:],
+		duration=int(duration*1000/len(images)), loop=0)
 	rmtree("temp", ignore_errors=True)
 
 def convertMultLottie2GIF(fileNames: list[str], newFileNames: list[str], quality: int=0):

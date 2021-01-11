@@ -1,5 +1,5 @@
 [![GitHub top language](https://img.shields.io/github/languages/top/FHPythonUtils/PyLottie.svg?style=for-the-badge)](../../)
-[![Codacy grade](https://img.shields.io/codacy/grade/7df4678b2a2145119898ce3a9be8b5fc.svg?style=for-the-badge)](https://www.codacy.com/gh/FHPythonUtils/PyLottie)
+[![Codacy grade](https://img.shields.io/codacy/grade/[projid].svg?style=for-the-badge)](https://www.codacy.com/gh/FHPythonUtils/PyLottie)
 [![Repository size](https://img.shields.io/github/repo-size/FHPythonUtils/PyLottie.svg?style=for-the-badge)](../../)
 [![Issues](https://img.shields.io/github/issues/FHPythonUtils/PyLottie.svg?style=for-the-badge)](../../issues)
 [![License](https://img.shields.io/github/license/FHPythonUtils/PyLottie.svg?style=for-the-badge)](/LICENSE.md)
