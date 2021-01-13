@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pylottie"
-version = "2021.1"
+version = "2021.2"
 description = "Convert .tgs and .lottie to .webp or .gif using pyppeteer."
 authors = ["FredHappyface"]
 classifiers = [
