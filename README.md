@@ -51,11 +51,8 @@ See the [Docs](/DOCS/README.md) for more information.
 |Format|Animated|
 |------|--------|
 |.gif  |✔      |
-|.tgs  |✔      |
 |.webp |✔      |
 
-
-Note that static images can fail to save as .gif occasionally in testing
 
 ## Install With PIP
 
