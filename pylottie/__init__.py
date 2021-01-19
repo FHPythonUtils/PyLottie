@@ -117,8 +117,11 @@ def convertLotties2PIL(fileNames: list[str], quality: int=1) -> list[tuple[list[
 			mn = binfile.read(2)
 			binfile.seek(0)
 			if mn == b'\x1f\x8b': # gzip magic number
-				archive = gzip.open(fileName, "rb")
-				lottie = json.load(archive)
+				try:
+					archive = gzip.open(fileName, "rb")
+					lottie = json.load(archive)
+				except gzip.BadGzipFile:
+					continue
 			else:
 				lottie = json.load(open(fileName))
 		lotties.append(lottie)
@@ -136,7 +139,7 @@ def convertLotties2PIL(fileNames: list[str], quality: int=1) -> list[tuple[list[
 	return imageDataList
 
 
-async def recordLotties(lottieData: list[str], quality: int) -> list[tuple[int, int]]:
+async def recordLotties(lottieData: list[str], quality: int) -> list[list[int]]:
 	"""Record the lottie data to a set of images
 
 	Args:
@@ -144,7 +147,7 @@ async def recordLotties(lottieData: list[str], quality: int) -> list[tuple[int, 
 		quality (int, optional): Quality of the returned sequence.
 
 	Returns:
-		tuple[int, int]: duration and number of frames
+		list[list[int]]: duration and number of frames
 	"""
 	# Make temp dir
 	if os.path.isdir("temp"):
@@ -165,7 +168,7 @@ async def recordLotties(lottieData: list[str], quality: int) -> list[tuple[int, 
 	return frameData
 
 
-async def recordSingleLottie(browser, lottieDataInstance, quality, index):
+async def recordSingleLottie(browser, lottieDataInstance, quality, index) -> list[int]:
 	page = await browser.newPage()
 	lottie = json.loads(lottieDataInstance)
 	html = open(THISDIR + "/lottie.html").read().replace("lottieData",

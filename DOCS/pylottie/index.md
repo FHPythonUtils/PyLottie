@@ -146,13 +146,13 @@ Convert to webp
 
 ## recordLotties
 
-[[find in source code]](../../pylottie/__init__.py#L139)
+[[find in source code]](../../pylottie/__init__.py#L142)
 
 ```python
 async def recordLotties(
     lottieData: list[str],
     quality: int,
-) -> list[tuple[(int, int)]]:
+) -> list[list[int]]:
 ```
 
 Record the lottie data to a set of images
@@ -164,14 +164,19 @@ Record the lottie data to a set of images
 
 #### Returns
 
-- `tuple[int,` *int]* - duration and number of frames
+- `list[list[int]]` - duration and number of frames
 
 ## recordSingleLottie
 
-[[find in source code]](../../pylottie/__init__.py#L168)
+[[find in source code]](../../pylottie/__init__.py#L171)
 
 ```python
-async def recordSingleLottie(browser, lottieDataInstance, quality, index):
+async def recordSingleLottie(
+    browser,
+    lottieDataInstance,
+    quality,
+    index,
+) -> list[int]:
 ```
 
 ## resQuality
