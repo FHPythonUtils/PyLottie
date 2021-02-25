@@ -1,12 +1,12 @@
 [![GitHub top language](https://img.shields.io/github/languages/top/FHPythonUtils/PyLottie.svg?style=for-the-badge)](../../)
-[![Codacy grade](https://img.shields.io/codacy/grade/[projid].svg?style=for-the-badge)](https://www.codacy.com/gh/FHPythonUtils/PyLottie)
 [![Repository size](https://img.shields.io/github/repo-size/FHPythonUtils/PyLottie.svg?style=for-the-badge)](../../)
 [![Issues](https://img.shields.io/github/issues/FHPythonUtils/PyLottie.svg?style=for-the-badge)](../../issues)
 [![License](https://img.shields.io/github/license/FHPythonUtils/PyLottie.svg?style=for-the-badge)](/LICENSE.md)
 [![Commit activity](https://img.shields.io/github/commit-activity/m/FHPythonUtils/PyLottie.svg?style=for-the-badge)](../../commits/master)
 [![Last commit](https://img.shields.io/github/last-commit/FHPythonUtils/PyLottie.svg?style=for-the-badge)](../../commits/master)
-[![PyPI Downloads](https://img.shields.io/pypi/dm/pylottie.svg?style=for-the-badge)](https://pypi.org/project/pylottie/)
-[![PyPI Version](https://img.shields.io/pypi/v/pylottie.svg?style=for-the-badge)](https://pypi.org/project/pylottie/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/pylottie.svg?style=for-the-badge)](https://pypistats.org/packages/pylottie)
+[![PyPI Total Downloads](https://img.shields.io/badge/dynamic/json?style=for-the-badge&label=total%20downloads&query=%24.total_downloads&url=https%3A%2F%2Fapi.pepy.tech%2Fapi%2Fprojects%2Fpylottie)](https://pepy.tech/project/pylottie)
+[![PyPI Version](https://img.shields.io/pypi/v/pylottie.svg?style=for-the-badge)](https://pypi.org/project/pylottie)
 
 <!-- omit in TOC -->
 # PyLottie
@@ -15,8 +15,8 @@
 
 Convert .tgs and .lottie to .webp or .gif using pyppeteer.
 
-- [Docs](#docs)
 - [Formats](#formats)
+- [Documentation](#documentation)
 - [Install With PIP](#install-with-pip)
 - [Language information](#language-information)
 	- [Built for](#built-for)
@@ -28,7 +28,7 @@ Convert .tgs and .lottie to .webp or .gif using pyppeteer.
 - [How to run](#how-to-run)
 	- [With VSCode](#with-vscode)
 	- [From the Terminal](#from-the-terminal)
-- [Download](#download-1)
+- [Download Project](#download-project)
 	- [Clone](#clone)
 		- [Using The Command Line](#using-the-command-line)
 		- [Using GitHub Desktop](#using-github-desktop)
@@ -39,11 +39,8 @@ Convert .tgs and .lottie to .webp or .gif using pyppeteer.
 	- [Code of Conduct](#code-of-conduct)
 	- [Contributing](#contributing)
 	- [Security](#security)
-
-## Docs
-See the [Docs](/DOCS/README.md) for more information.
-
-
+	- [Support](#support)
+	- [Rationale](#rationale)
 
 
 ## Formats
@@ -54,14 +51,15 @@ See the [Docs](/DOCS/README.md) for more information.
 |.webp |✔      |
 
 
-## Install With PIP
+## Documentation
+See the [Docs](/DOCS/) for more information.
 
+## Install With PIP
 ```python
 pip install pylottie
 ```
 
 Head to https://pypi.org/project/pylottie/ for more info
-
 
 ## Language information
 ### Built for
@@ -94,8 +92,7 @@ Interpreter > Python 3.9)
 ./[file].py
 ```
 
-
-## Download
+## Download Project
 ### Clone
 #### Using The Command Line
 1. Press the Clone or download button in the top right
@@ -127,20 +124,38 @@ More information can be found at
 ## Community Files
 ### Licence
 MIT License
+Copyright (c) FredHappyface
 (See the [LICENSE](/LICENSE.md) for more information.)
 
 ### Changelog
 See the [Changelog](/CHANGELOG.md) for more information.
 
 ### Code of Conduct
-In the interest of fostering an open and welcoming environment, we
-as contributors and maintainers pledge to make participation in our
-project and our community a harassment-free experience for everyone.
-Please see the
-[Code of Conduct](https://github.com/FHPythonUtils/.github/blob/master/CODE_OF_CONDUCT.md) for more information.
+Online communities include people from many backgrounds. The *Project*
+contributors are committed to providing a friendly, safe and welcoming
+environment for all. Please see the
+[Code of Conduct](https://github.com/FHPythonUtils/.github/blob/master/CODE_OF_CONDUCT.md)
+ for more information.
 
 ### Contributing
-Contributions are welcome, please see the [Contributing Guidelines](https://github.com/FHPythonUtils/.github/blob/master/CONTRIBUTING.md) for more information.
+Contributions are welcome, please see the
+[Contributing Guidelines](https://github.com/FHPythonUtils/.github/blob/master/CONTRIBUTING.md)
+for more information.
 
 ### Security
-Thank you for improving the security of the project, please see the [Security Policy](https://github.com/FHPythonUtils/.github/blob/master/SECURITY.md) for more information.
+Thank you for improving the security of the project, please see the
+[Security Policy](https://github.com/FHPythonUtils/.github/blob/master/SECURITY.md)
+for more information.
+
+### Support
+Thank you for using this project, I hope it is of use to you. Please be aware that
+those involved with the project often do so for fun along with other commitments
+(such as work, family, etc). Please see the
+[Support Policy](https://github.com/FHPythonUtils/.github/blob/master/SUPPORT.md)
+for more information.
+
+### Rationale
+The rationale acts as a guide to various processes regarding projects such as
+the versioning scheme and the programming styles used. Please see the
+[Rationale](https://github.com/FHPythonUtils/.github/blob/master/RATIONALE.md)
+for more information.
