@@ -1,2 +1,2 @@
 Pillow<10,>=8.1.0
-pyppeteer<2,>=0.2.4
+pyppeteer<2,>=0.2.6
