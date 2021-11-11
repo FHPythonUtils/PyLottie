@@ -25,11 +25,11 @@ Get it from:
 - Pypi: https://pypi.org/project/pyrlottie
 - Github: https://github.com/FHPythonUtils/PyRlottie
 
-| Environment | Supported |
-| ----------- | --------- |
-|linux_x86_64 | ✔         |
-|linux_aarch64| ✔         |
-|windows_amd64| ✔         |
+| Environment   | Supported |
+| ------------- | --------- |
+| linux_x86_64  | ✔         |
+| linux_aarch64 | ✔         |
+| windows_amd64 | ✔         |
 
 - [PyRlottie](#pyrlottie)
 - [Formats](#formats)
@@ -97,17 +97,18 @@ pylottie.convertMultLottie2ALL(inFiles, outFiles)
 ```
 
 ## Documentation
+
 See the [Docs](/DOCS/) for more information.
 
 ## Supported Environments (64bit)
 
-| Environment | Supported |
-| ----------- | --------- |
-|linux_x86_64 | ✔         |
-|linux_aarch64| :x:       |
-|windows_amd64| ✔         |
-|darwin_x86_64| ✔         |
-|darwin_arm64 | :x:       |
+| Environment   | Supported |
+| ------------- | --------- |
+| linux_x86_64  | ✔         |
+| linux_aarch64 | :x:       |
+| windows_amd64 | ✔         |
+| darwin_x86_64 | ✔         |
+| darwin_arm64  | :x:       |
 
 For a full list of machine architecures for Linux see https://stackoverflow.com/questions/45125516/possible-values-for-uname-m
 
@@ -122,6 +123,7 @@ Head to https://pypi.org/project/pylottie/ for more info
 ## Language information
 
 ### Built for
+
 This program has been written for Python versions 3.7 - 3.10 and has been tested with both 3.7 and
 3.10
 
@@ -134,6 +136,7 @@ choco install python
 ```
 
 ### Windows - Python.org
+
 To install Python, go to https://www.python.org/downloads/windows/ and download the latest
 version.
 
@@ -160,6 +163,7 @@ brew install python@3.x
 ```
 
 ### MacOS - Python.org
+
 To install Python, go to https://www.python.org/downloads/macos/ and download the latest
 version.
 
@@ -217,14 +221,17 @@ https://help.github.com/en/desktop/contributing-to-projects/cloning-a-repository
 ## Community Files
 
 ### Licence
+
 MIT License
 Copyright (c) FredHappyface
 (See the [LICENSE](/LICENSE.md) for more information.)
 
 ### Changelog
+
 See the [Changelog](/CHANGELOG.md) for more information.
 
 ### Code of Conduct
+
 Online communities include people from many backgrounds. The *Project*
 contributors are committed to providing a friendly, safe and welcoming
 environment for all. Please see the
@@ -232,16 +239,19 @@ environment for all. Please see the
  for more information.
 
 ### Contributing
+
 Contributions are welcome, please see the
 [Contributing Guidelines](https://github.com/FHPythonUtils/.github/blob/master/CONTRIBUTING.md)
 for more information.
 
 ### Security
+
 Thank you for improving the security of the project, please see the
 [Security Policy](https://github.com/FHPythonUtils/.github/blob/master/SECURITY.md)
 for more information.
 
 ### Support
+
 Thank you for using this project, I hope it is of use to you. Please be aware that
 those involved with the project often do so for fun along with other commitments
 (such as work, family, etc). Please see the
@@ -249,6 +259,7 @@ those involved with the project often do so for fun along with other commitments
 for more information.
 
 ### Rationale
+
 The rationale acts as a guide to various processes regarding projects such as
 the versioning scheme and the programming styles used. Please see the
 [Rationale](https://github.com/FHPythonUtils/.github/blob/master/RATIONALE.md)
