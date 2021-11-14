@@ -1,5 +1,7 @@
 """Test convert multiple tgs files to webp and gif"""
 
+from __future__ import annotations
+
 import time
 
 import pylottie
