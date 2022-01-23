@@ -1,7 +1,5 @@
 import sys
-from argparse import Namespace
 from pathlib import Path
-from turtle import color
 
 from imgcompare import imgcompare
 from PIL import Image
