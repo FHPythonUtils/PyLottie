@@ -25,6 +25,10 @@ python = "^3.7"
 Pillow = "<10,>=9.0.0"
 pyppeteer = "<2,>=1.0.2"
 
+[tool.poetry.dev-dependencies]
+imgcompare = "^2.0.1"
+pytest = "^6.2.5"
+
 [tool.poetry.scripts]
 pylottie = 'pylottie:cli'
 

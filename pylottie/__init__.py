@@ -160,9 +160,7 @@ def convertLotties2PIL(
 			else:
 				lottie = json.loads(Path(fileName).read_text(encoding="utf-8"))
 		lotties.append(lottie)
-	frameData = asyncio.get_event_loop().run_until_complete(
-		recordLotties([json.dumps(lottie) for lottie in lotties], quality)
-	)
+	frameData = asyncio.run(recordLotties([json.dumps(lottie) for lottie in lotties], quality))
 	imageDataList = []
 	for index, frameDataInstance in enumerate(frameData):
 		images = []
