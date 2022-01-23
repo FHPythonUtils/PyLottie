@@ -28,7 +28,7 @@ def convertLottie2ALL(fileName: str, newFileName: str, quality: int = 1):
 
 
 def convertLottie2GIF(fileName: str, newFileName: str, quality: int = 1):
-	"""Convert to webp
+	"""Convert to gif
 
 	Args:
 		fileName (str): file path of the lottie file
@@ -63,12 +63,13 @@ def convertMultLottie2ALL(fileNames: list[str], newFileNames: list[str], quality
 		duration = imageData[1]
 		images[0].save(
 			newFileNames[index] + ".gif",
-			save_all=True,
 			append_images=images[1:],
 			duration=duration * 1000 / len(images),
-			loop=0,
+			version="GIF89a",
 			transparency=0,
 			disposal=2,
+			save_all=True,
+			loop=0,
 		)
 		images[0].save(
 			newFileNames[index] + ".webp",
