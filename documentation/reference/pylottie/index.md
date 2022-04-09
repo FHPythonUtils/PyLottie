@@ -1,10 +1,10 @@
-# pylottie
+# Pylottie
 
-> Auto-generated documentation for [pylottie](../../pylottie/__init__.py) module.
+> Auto-generated documentation for [pylottie](../../../pylottie/__init__.py) module.
 
 Support for animated stickers
 
-- [Pylottie](../README.md#pylottie-index) / [Modules](../README.md#pylottie-modules) / pylottie
+- [Pylottie](../README.md#pylottie-index) / [Modules](../MODULES.md#pylottie-modules) / Pylottie
     - [convertLottie2ALL](#convertlottie2all)
     - [convertLottie2GIF](#convertlottie2gif)
     - [convertLottie2Webp](#convertlottie2webp)
@@ -17,7 +17,7 @@ Support for animated stickers
 
 ## convertLottie2ALL
 
-[[find in source code]](../../pylottie/__init__.py#L19)
+[[find in source code]](../../../pylottie/__init__.py#L19)
 
 ```python
 def convertLottie2ALL(fileName: str, newFileName: str, quality: int = 1):
@@ -33,7 +33,7 @@ Convert to gif and webp
 
 ## convertLottie2GIF
 
-[[find in source code]](../../pylottie/__init__.py#L30)
+[[find in source code]](../../../pylottie/__init__.py#L30)
 
 ```python
 def convertLottie2GIF(fileName: str, newFileName: str, quality: int = 1):
@@ -49,7 +49,7 @@ Convert to gif
 
 ## convertLottie2Webp
 
-[[find in source code]](../../pylottie/__init__.py#L41)
+[[find in source code]](../../../pylottie/__init__.py#L41)
 
 ```python
 def convertLottie2Webp(fileName: str, newFileName: str, quality: int = 1):
@@ -65,13 +65,13 @@ Convert to webp
 
 ## convertLotties2PIL
 
-[[find in source code]](../../pylottie/__init__.py#L137)
+[[find in source code]](../../../pylottie/__init__.py#L137)
 
 ```python
 def convertLotties2PIL(
     fileNames: list[str],
     quality: int = 1,
-) -> list[tuple[(list[Image.Image], float)]]:
+) -> list[tuple[list[Image.Image], float]]:
 ```
 
 Convert list of lottie files to a list of images with a duration.
@@ -87,7 +87,7 @@ Convert list of lottie files to a list of images with a duration.
 
 ## convertMultLottie2ALL
 
-[[find in source code]](../../pylottie/__init__.py#L52)
+[[find in source code]](../../../pylottie/__init__.py#L52)
 
 ```python
 def convertMultLottie2ALL(
@@ -107,7 +107,7 @@ Convert to gif and webp
 
 ## convertMultLottie2GIF
 
-[[find in source code]](../../pylottie/__init__.py#L84)
+[[find in source code]](../../../pylottie/__init__.py#L84)
 
 ```python
 def convertMultLottie2GIF(
@@ -127,7 +127,7 @@ Convert to gif
 
 ## convertMultLottie2Webp
 
-[[find in source code]](../../pylottie/__init__.py#L108)
+[[find in source code]](../../../pylottie/__init__.py#L108)
 
 ```python
 def convertMultLottie2Webp(
@@ -147,7 +147,7 @@ Convert to webp
 
 ## recordLotties
 
-[[find in source code]](../../pylottie/__init__.py#L178)
+[[find in source code]](../../../pylottie/__init__.py#L178)
 
 ```python
 async def recordLotties(
@@ -169,7 +169,7 @@ Record the lottie data to a set of images
 
 ## recordSingleLottie
 
-[[find in source code]](../../pylottie/__init__.py#L212)
+[[find in source code]](../../../pylottie/__init__.py#L212)
 
 ```python
 async def recordSingleLottie(
