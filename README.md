@@ -13,7 +13,7 @@
 
 <img src="readme-assets/icons/name.png" alt="Project Icon" width="750">
 
-Convert .tgs and .lottie to .webp or .gif using pyppeteer.
+Convert .tgs and .lottie to .webp or .gif using playwright.
 
 ## PyRlottie
 
