@@ -1,8 +1,7 @@
-# Pylottie Modules
+# Pylottie Index
 
-> Auto-generated documentation modules index.
+> Auto-generated documentation index.
 
-Full list of [Pylottie](README.md#pylottie-index) project modules.
+A full list of `Pylottie` project modules.
 
-- [Pylottie Index](README.md#pylottie-index)
 - [Pylottie](pylottie/index.md#pylottie)

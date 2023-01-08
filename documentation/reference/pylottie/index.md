@@ -1,27 +1,24 @@
 # Pylottie
 
+[Pylottie Index](../README.md#pylottie-index) /
+Pylottie
+
 > Auto-generated documentation for [pylottie](../../../pylottie/__init__.py) module.
 
-Support for animated stickers
-
-- [Pylottie](../README.md#pylottie-index) / [Modules](../MODULES.md#pylottie-modules) / Pylottie
-    - [convertLottie2ALL](#convertlottie2all)
-    - [convertLottie2GIF](#convertlottie2gif)
-    - [convertLottie2Webp](#convertlottie2webp)
-    - [convertLotties2PIL](#convertlotties2pil)
-    - [convertMultLottie2ALL](#convertmultlottie2all)
-    - [convertMultLottie2GIF](#convertmultlottie2gif)
-    - [convertMultLottie2Webp](#convertmultlottie2webp)
-    - [recordLotties](#recordlotties)
-    - [recordSingleLottie](#recordsinglelottie)
+- [Pylottie](#pylottie)
+  - [convertLottie2ALL](#convertlottie2all)
+  - [convertLottie2GIF](#convertlottie2gif)
+  - [convertLottie2Webp](#convertlottie2webp)
+  - [convertLotties2PIL](#convertlotties2pil)
+  - [convertMultLottie2ALL](#convertmultlottie2all)
+  - [convertMultLottie2GIF](#convertmultlottie2gif)
+  - [convertMultLottie2Webp](#convertmultlottie2webp)
+  - [recordLotties](#recordlotties)
+  - [recordSingleLottie](#recordsinglelottie)
 
 ## convertLottie2ALL
 
-[[find in source code]](../../../pylottie/__init__.py#L19)
-
-```python
-def convertLottie2ALL(fileName: str, newFileName: str, quality: int = 1):
-```
+[Show source in __init__.py:19](../../../pylottie/__init__.py#L19)
 
 Convert to gif and webp
 
@@ -31,13 +28,18 @@ Convert to gif and webp
 - `newFileName` *str* - name of the file to write (omit file ext)
 - `quality` *int, optional* - Quality of the returned sequence. Defaults to 1.
 
-## convertLottie2GIF
-
-[[find in source code]](../../../pylottie/__init__.py#L30)
+#### Signature
 
 ```python
-def convertLottie2GIF(fileName: str, newFileName: str, quality: int = 1):
+def convertLottie2ALL(fileName: str, newFileName: str, quality: int = 1):
+    ...
 ```
+
+
+
+## convertLottie2GIF
+
+[Show source in __init__.py:30](../../../pylottie/__init__.py#L30)
 
 Convert to gif
 
@@ -47,13 +49,18 @@ Convert to gif
 - `newFileName` *str* - name of the file to write
 - `quality` *int, optional* - Quality of the returned sequence. Defaults to 1.
 
-## convertLottie2Webp
-
-[[find in source code]](../../../pylottie/__init__.py#L41)
+#### Signature
 
 ```python
-def convertLottie2Webp(fileName: str, newFileName: str, quality: int = 1):
+def convertLottie2GIF(fileName: str, newFileName: str, quality: int = 1):
+    ...
 ```
+
+
+
+## convertLottie2Webp
+
+[Show source in __init__.py:41](../../../pylottie/__init__.py#L41)
 
 Convert to webp
 
@@ -63,16 +70,18 @@ Convert to webp
 - `newFileName` *str* - name of the file to write
 - `quality` *int, optional* - Quality of the returned sequence. Defaults to 1.
 
-## convertLotties2PIL
-
-[[find in source code]](../../../pylottie/__init__.py#L137)
+#### Signature
 
 ```python
-def convertLotties2PIL(
-    fileNames: list[str],
-    quality: int = 1,
-) -> list[tuple[list[Image.Image], float]]:
+def convertLottie2Webp(fileName: str, newFileName: str, quality: int = 1):
+    ...
 ```
+
+
+
+## convertLotties2PIL
+
+[Show source in __init__.py:137](../../../pylottie/__init__.py#L137)
 
 Convert list of lottie files to a list of images with a duration.
 
@@ -85,17 +94,20 @@ Convert list of lottie files to a list of images with a duration.
 
 - `list[tuple[list[Image],` *float]]* - pil images to write to gif/ webp and duration
 
-## convertMultLottie2ALL
-
-[[find in source code]](../../../pylottie/__init__.py#L52)
+#### Signature
 
 ```python
-def convertMultLottie2ALL(
-    fileNames: list[str],
-    newFileNames: list[str],
-    quality: int = 1,
-):
+def convertLotties2PIL(
+    fileNames: list[str], quality: int = 1
+) -> list[tuple[list[Image.Image], float]]:
+    ...
 ```
+
+
+
+## convertMultLottie2ALL
+
+[Show source in __init__.py:52](../../../pylottie/__init__.py#L52)
 
 Convert to gif and webp
 
@@ -105,17 +117,20 @@ Convert to gif and webp
 - `newFileNames` *list[str]* - name of the files to write (omit file ext)
 - `quality` *int, optional* - Quality of the returned sequence. Defaults to 1.
 
-## convertMultLottie2GIF
-
-[[find in source code]](../../../pylottie/__init__.py#L84)
+#### Signature
 
 ```python
-def convertMultLottie2GIF(
-    fileNames: list[str],
-    newFileNames: list[str],
-    quality: int = 1,
+def convertMultLottie2ALL(
+    fileNames: list[str], newFileNames: list[str], quality: int = 1
 ):
+    ...
 ```
+
+
+
+## convertMultLottie2GIF
+
+[Show source in __init__.py:84](../../../pylottie/__init__.py#L84)
 
 Convert to gif
 
@@ -125,17 +140,20 @@ Convert to gif
 - `newFileNames` *list[str]* - name of the files to write
 - `quality` *int, optional* - Quality of the returned sequence. Defaults to 1.
 
-## convertMultLottie2Webp
-
-[[find in source code]](../../../pylottie/__init__.py#L108)
+#### Signature
 
 ```python
-def convertMultLottie2Webp(
-    fileNames: list[str],
-    newFileNames: list[str],
-    quality: int = 1,
+def convertMultLottie2GIF(
+    fileNames: list[str], newFileNames: list[str], quality: int = 1
 ):
+    ...
 ```
+
+
+
+## convertMultLottie2Webp
+
+[Show source in __init__.py:108](../../../pylottie/__init__.py#L108)
 
 Convert to webp
 
@@ -145,16 +163,20 @@ Convert to webp
 - `newFileNames` *list[str]* - name of the files to write
 - `quality` *int, optional* - Quality of the returned sequence. Defaults to 1.
 
-## recordLotties
-
-[[find in source code]](../../../pylottie/__init__.py#L178)
+#### Signature
 
 ```python
-async def recordLotties(
-    lottieData: list[str],
-    quality: int,
-) -> list[list[int]]:
+def convertMultLottie2Webp(
+    fileNames: list[str], newFileNames: list[str], quality: int = 1
+):
+    ...
 ```
+
+
+
+## recordLotties
+
+[Show source in __init__.py:177](../../../pylottie/__init__.py#L177)
 
 Record the lottie data to a set of images
 
@@ -167,15 +189,24 @@ Record the lottie data to a set of images
 
 - `list[list[int]]` - duration and number of frames
 
-## recordSingleLottie
-
-[[find in source code]](../../../pylottie/__init__.py#L212)
+#### Signature
 
 ```python
-async def recordSingleLottie(
-    browser,
-    lottieDataInstance,
-    quality,
-    index,
-) -> list[int]:
+def recordLotties(lottieData: list[str], quality: int) -> list[list[int]]:
+    ...
 ```
+
+
+
+## recordSingleLottie
+
+[Show source in __init__.py:206](../../../pylottie/__init__.py#L206)
+
+#### Signature
+
+```python
+def recordSingleLottie(browser, lottieDataInstance, quality, index) -> list[int]:
+    ...
+```
+
+

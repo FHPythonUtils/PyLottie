@@ -2,7 +2,6 @@
 """
 from __future__ import annotations
 
-import asyncio
 import gzip
 import json
 import os
@@ -10,8 +9,9 @@ from math import ceil
 from pathlib import Path
 from shutil import rmtree
 
+from install_playwright import install
 from PIL import Image
-from pyppeteer import launch
+from playwright.sync_api import sync_playwright
 
 THISDIR = str(Path(__file__).resolve().parent)
 
@@ -160,9 +160,8 @@ def convertLotties2PIL(
 			else:
 				lottie = json.loads(Path(fileName).read_text(encoding="utf-8"))
 		lotties.append(lottie)
-	frameData = asyncio.get_event_loop().run_until_complete(
-		recordLotties([json.dumps(lottie) for lottie in lotties], quality)
-	)
+	frameData = recordLotties([json.dumps(lottie) for lottie in lotties], quality)
+
 	imageDataList = []
 	for index, frameDataInstance in enumerate(frameData):
 		images = []
@@ -175,7 +174,7 @@ def convertLotties2PIL(
 	return imageDataList
 
 
-async def recordLotties(lottieData: list[str], quality: int) -> list[list[int]]:
+def recordLotties(lottieData: list[str], quality: int) -> list[list[int]]:
 	"""Record the lottie data to a set of images
 
 	Args:
@@ -190,27 +189,22 @@ async def recordLotties(lottieData: list[str], quality: int) -> list[list[int]]:
 		pass
 	else:
 		os.mkdir("temp")
-	# Create pyppeteer instance
-	browser = await launch(
-		headless=True,
-		options={
-			"args": ["--no-sandbox", "--disable-web-security", "--allow-file-access-from-files"]
-		},
-	)
-	# Convert lottie to png files and generate 'frameData'
-	tasks = []
-	for index, lottieDataInstance in enumerate(lottieData):
-		task = asyncio.ensure_future(
+	with sync_playwright() as p:
+		install(p.chromium)
+		browser = p.chromium.launch()
+
+		frameData = [
 			recordSingleLottie(browser, lottieDataInstance, quality, index)
-		)
-		tasks.append(task)
-	frameData = await asyncio.gather(*tasks)
-	await browser.close()
-	return frameData  # type:ignore
+			for index, lottieDataInstance in enumerate(lottieData)
+		]
+
+		browser.close()
+
+	return frameData
 
 
-async def recordSingleLottie(browser, lottieDataInstance, quality, index) -> list[int]:
-	page = await browser.newPage()
+def recordSingleLottie(browser, lottieDataInstance, quality, index) -> list[int]:
+	page = browser.new_page()
 	lottie = json.loads(lottieDataInstance)
 	html = (
 		Path(THISDIR + "/lottie.html")
@@ -219,18 +213,14 @@ async def recordSingleLottie(browser, lottieDataInstance, quality, index) -> lis
 		.replace("WIDTH", str(lottie["w"]))
 		.replace("HEIGHT", str(lottie["h"]))
 	)
-	await page.setContent(html)
-	await page.waitForSelector(".ready")
-	duration = await page.evaluate("() => duration")
-	numFrames = await page.evaluate("() => numFrames")
-	pageFrame = page.mainFrame
-	rootHandle = await pageFrame.querySelector("#root")
+	page.set_content(html)
+	duration = page.evaluate("() => duration")
+	numFrames = page.evaluate("() => numFrames")
+	rootHandle = page.main_frame.wait_for_selector("#root")
 	# Take a screenshot of each frame
 	step = _resQuality(quality, numFrames, duration)
 	for frame in range(0, numFrames, step):
-		await rootHandle.screenshot(
-			{"path": f"temp/temp{index}_{frame}.png", "omitBackground": True}
-		)
-		await page.evaluate(f"animation.goToAndStop({frame + 1}, true)")
-	await page.close()
+		rootHandle.screenshot(path=f"temp/temp{index}_{frame}.png", omit_background=True)
+		page.evaluate(f"animation.goToAndStop({frame + 1}, true)")
+	page.close()
 	return [duration, numFrames, step]

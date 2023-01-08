@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "pylottie"
-version = "2022"
+version = "2023"
 license = "mit"
-description = "Convert .tgs and .lottie to .webp or .gif using pyppeteer."
+description = "Convert .tgs and .lottie to .webp or .gif using playwright."
 authors = ["FredHappyface"]
 classifiers = [
 	"Development Status :: 5 - Production/Stable",
@@ -21,9 +21,10 @@ documentation = "https://github.com/FHPythonUtils/PyLottie/blob/master/README.md
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.8"
 Pillow = "<10,>=9.0.0"
-pyppeteer = "<2,>=1.0.2"
+playwright = "<2,>=1.29.1"
+install-playwright = "<2,>=0.0.0"
 
 [tool.poetry.dev-dependencies]
 imgcompare = "^2.0.1"
@@ -35,30 +36,9 @@ coverage = "^6.3.2"
 [tool.poetry.scripts]
 pylottie = 'pylottie:cli'
 
-[tool.pylint.basic]
-argument-naming-style = "camelCase"
-attr-naming-style = "camelCase"
-function-naming-style = "camelCase"
-method-naming-style = "camelCase"
-variable-naming-style = "camelCase"
-
-[tool.pylint.format]
-indent-string = "\t"
-
-[tool.pylint.master]
-ignore-patterns = "test_.*?py"
-
-[tool.pylint.messages_control]
-enable = ["F", "E", "W", "R", "C"]
-disable = [
-	"pointless-string-statement",
-	"superfluous-parens",
-	"bad-continuation"
-]
-
 [tool.black]
 line-length = 100
-target-version = ["py37"]
+target-version = ["py38"]
 
 [tool.isort]
 profile = "black"
@@ -71,3 +51,36 @@ ignore = "D205,D415"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pylint.basic]
+argument-naming-style = "camelCase"
+attr-naming-style = "camelCase"
+function-naming-style = "camelCase"
+method-naming-style = "camelCase"
+variable-naming-style = "camelCase"
+
+[tool.pylint.format]
+indent-string = "\t"
+
+[tool.pylint.master]
+ignore-paths = ["tests"]
+
+[tool.pylint.messages_control]
+enable = ["F", "E", "W", "R", "C"]
+disable = ["pointless-string-statement", "superfluous-parens"]
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+env_list =
+	py311
+	py310
+	py39
+	py38
+
+[testenv]
+deps =
+	imgcompare
+	pytest
+commands = pytest tests
+"""
