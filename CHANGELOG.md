@@ -3,10 +3,14 @@
 All major and minor version changes will be documented in this file. Details of
 patch-level version changes can be found in [commit messages](../../commits/master).
 
+## 2024 - 2024/03/30
+
+- Update deps
+
 ## 2023 - 2023/01/08
 
 - Add tox config
-- Use `playwright` and `install_playwright` in-place of `pyppeteer`
+- Use `playwright` and `install_playwright` in-place of `playwright`
 	- Seemingly minor perf improvements (~32s vs ~38s)
 
 ## 2022 - 2022/01/23

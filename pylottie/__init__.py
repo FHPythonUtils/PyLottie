@@ -1,5 +1,5 @@
-"""Support for animated stickers
-"""
+"""Support for animated stickers"""
+
 from __future__ import annotations
 
 import gzip
@@ -20,9 +20,11 @@ def convertLottie2ALL(fileName: str, newFileName: str, quality: int = 1):
 	"""Convert to gif and webp
 
 	Args:
+	----
 		fileName (str): file path of the lottie file
 		newFileName (str): name of the file to write (omit file ext)
 		quality (int, optional): Quality of the returned sequence. Defaults to 1.
+
 	"""
 	convertMultLottie2ALL([fileName], [newFileName], quality)
 
@@ -31,9 +33,11 @@ def convertLottie2GIF(fileName: str, newFileName: str, quality: int = 1):
 	"""Convert to gif
 
 	Args:
+	----
 		fileName (str): file path of the lottie file
 		newFileName (str): name of the file to write
 		quality (int, optional): Quality of the returned sequence. Defaults to 1.
+
 	"""
 	convertMultLottie2GIF([fileName], [newFileName], quality)
 
@@ -42,9 +46,11 @@ def convertLottie2Webp(fileName: str, newFileName: str, quality: int = 1):
 	"""Convert to webp
 
 	Args:
+	----
 		fileName (str): file path of the lottie file
 		newFileName (str): name of the file to write
 		quality (int, optional): Quality of the returned sequence. Defaults to 1.
+
 	"""
 	convertMultLottie2Webp([fileName], [newFileName], quality)
 
@@ -53,9 +59,11 @@ def convertMultLottie2ALL(fileNames: list[str], newFileNames: list[str], quality
 	"""Convert to gif and webp
 
 	Args:
+	----
 		fileNames (list[str]): list of file path to the lottie files
 		newFileNames (list[str]): name of the files to write (omit file ext)
 		quality (int, optional): Quality of the returned sequence. Defaults to 1.
+
 	"""
 	imageDataList = convertLotties2PIL(fileNames, quality)
 	for index, imageData in enumerate(imageDataList):
@@ -85,9 +93,11 @@ def convertMultLottie2GIF(fileNames: list[str], newFileNames: list[str], quality
 	"""Convert to gif
 
 	Args:
+	----
 		fileNames (list[str]): list of file path to the lottie files
 		newFileNames (list[str]): name of the files to write
 		quality (int, optional): Quality of the returned sequence. Defaults to 1.
+
 	"""
 	imageDataList = convertLotties2PIL(fileNames, quality)
 	for index, imageData in enumerate(imageDataList):
@@ -109,9 +119,11 @@ def convertMultLottie2Webp(fileNames: list[str], newFileNames: list[str], qualit
 	"""Convert to webp
 
 	Args:
+	----
 		fileNames (list[str]): list of file path to the lottie files
 		newFileNames (list[str]): name of the files to write
 		quality (int, optional): Quality of the returned sequence. Defaults to 1.
+
 	"""
 	imageDataList = convertLotties2PIL(fileNames, quality)
 	for index, imageData in enumerate(imageDataList):
@@ -140,11 +152,14 @@ def convertLotties2PIL(
 	"""Convert list of lottie files to a list of images with a duration.
 
 	Args:
+	----
 		fileNames (list[str]): list of file paths of the lottie files
 		quality (int, optional): Quality of the returned sequence. Defaults to 1.
 
 	Returns:
+	-------
 		list[tuple[list[Image], float]]: pil images to write to gif/ webp and duration
+
 	"""
 	lotties = []
 	for fileName in fileNames:
@@ -178,11 +193,14 @@ def recordLotties(lottieData: list[str], quality: int) -> list[list[int]]:
 	"""Record the lottie data to a set of images
 
 	Args:
+	----
 		lottieData (str): lottie data as string
 		quality (int, optional): Quality of the returned sequence.
 
 	Returns:
+	-------
 		list[list[int]]: duration and number of frames
+
 	"""
 	# Make temp dir
 	if os.path.isdir("temp"):
